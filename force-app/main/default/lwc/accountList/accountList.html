@@ -1,0 +1,24 @@
+<!--
+  @description       : Display the list of Accounts
+  @author            : Rodrigo Balbi - Oktana
+  @group             : 
+  @last modified on  : 04-27-2022
+  @last modified by  : Rodrigo Balbi - Oktana
+-->
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+    <template if:false={isLoading}>
+        <template if:true={hasError}>
+            <div class="slds-text-color_error">
+                {errorMessage}
+            </div>
+        </template>
+        <template if:false={hasError}>
+            <template if:true={accounts}>
+                // table with a list of accounts
+            </template>
+        </template>
+    </template>
+</template>
