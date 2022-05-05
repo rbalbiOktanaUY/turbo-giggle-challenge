@@ -1,124 +1,104 @@
-public inherited sharing class Animal {
+/**
+ * @description       : A class for Animal
+ * @author            : Rodrigo Balbi - Oktana
+ * @group             : 
+ * @last modified on  : 05-05-2022
+ * @last modified by  : Rodrigo Balbi - Oktana
+**/
+public with sharing class Animal {
 
-    global String animalType;
+    private String animalType;
 
     public Animal(String animalType) {
         this.animalType = animalType;
     }
 
     public void makeNoise() {
-        if (animalType == 'Lion') {
+        if(this.animalType.equals(Constants.ANIMAL_LION)){
             roar();
-        }
-        else if (animalType == 'Cat') {
+        } else if(this.animalType.equals(Constants.ANIMAL_CAT)){
             meow();
-        }
-        else if (animalType == 'Horse') {
+        } else if(this.animalType.equals(Constants.ANIMAL_HORSE)){
             neigh();
-        }
-        else if (animalType == 'Alligator') {
+        } else if(this.animalType.equals(Constants.ANIMAL_ALLIGATOR)){
             hiss();
-        }
-        else if (animalType == 'Bear') {
+        } else if(this.animalType.equals(Constants.ANIMAL_BEAR)){
             growl();
-        }
-        else if (animalType == 'Cow') {
+        } else if(this.animalType.equals(Constants.ANIMAL_COW)){
             moo();
-        }
-        else if (animalType == 'Dog') {
+        } else if(this.animalType.equals(Constants.ANIMAL_DOG)){
             bark();
         }
     }
 
     public void move() {
-        if (animalType == 'Lion') {
+        if (this.animalType.equals(Constants.ANIMAL_LION) ||
+            this.animalType.equals(Constants.ANIMAL_DOG)) {
             run();
         }
-        else if (animalType == 'Cat') {
+        else if (this.animalType.equals(Constants.ANIMAL_CAT) ||
+                 this.animalType.equals(Constants.ANIMAL_BEAR) ||
+                 this.animalType.equals(Constants.ANIMAL_COW)) {
             walk();
         }
-        else if (animalType == 'Horse') {
+        else if (this.animalType.equals(Constants.ANIMAL_HORSE)) {
             slide();
         }
-        else if (animalType == 'Alligator') {
+        else if (this.animalType.equals(Constants.ANIMAL_ALLIGATOR)) {
             hiss();
-        }
-        else if (animalType == 'Bear') {
-            walk();
-        }
-        else if (animalType == 'Cow') {
-            walk();
-        }
-        else if (animalType == 'Dog') {
-            run();
         }
     }
 
     public void swim() {
-        if (animalType == 'Lion') {
-            doSwim();
-        }
-        else if (animalType == 'Cat') {
-            // ignore, cannot swim
-        }
-        else if (animalType == 'Horse') {
-            // ignore, cannot swim
-        }
-        else if (animalType == 'Alligator') {
-            doSwim();
-        }
-        else if (animalType == 'Bear') {
-            doSwim();
-        }
-        else if (animalType == 'Cow') {
-            // ignore, cannot swim
-        }
-        else if (animalType == 'Dog') {
+        if (this.animalType.equals(Constants.ANIMAL_LION) ||
+            this.animalType.equals(Constants.ANIMAL_ALLIGATOR) ||
+            this.animalType.equals(Constants.ANIMAL_BEAR) ||
+            this.animalType.equals(Constants.ANIMAL_DOG)) {
             doSwim();
         }
     }
 
-    public void roar() {
+    private void roar() {
         // roaring behavior here
     }
 
-    public void meow() {
+    private void meow() {
         // meowing behavior here
     }
 
-    public void neigh() {
+    private void neigh() {
         // neighing behavior here
     }
 
-    public void hiss() {
+    private void hiss() {
         // hissing behavior here
     }
 
-    public void growl() {
+    private void growl() {
         // growling behavior here
     }
 
-    public void moo() {
+    private void moo() {
         // mooing behavior here
     }
 
-    public void bark() {
+    private void bark() {
         // barking behavior here
     }
 
-    public void run() {
+    private void run() {
         // running behavior here
     }
 
-    public void walk() {
+    private void walk() {
         // walking behavior here
     }
 
-    public void slide() {
+    private void slide() {
         // sliding behavior here
     }
 
-    public void doSwim() {
+    private void doSwim() {
         // swimming behavior here
     }
 

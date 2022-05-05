@@ -1,0 +1,52 @@
+<!--
+  @description       : Display the list of Accounts
+  @author            : Rodrigo Balbi - Oktana
+  @group             : 
+  @last modified on  : 05-05-2022
+  @last modified by  : Rodrigo Balbi - Oktana
+-->
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+    <template if:false={isLoading}>
+        <template if:true={hasError}>
+            <div class="slds-text-color_error">
+                {errorMessage}
+            </div>
+        </template>
+        <template if:false={hasError}>
+            <div class="slds-text-heading_large">Accounts</div>
+            <template if:true={accounts}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead class="slds-line-height_reset">
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Account Name">
+                                    Account Name
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={accounts} for:item="theAccount" for:index="index">
+                            <tr key={theAccount.accountId} class="slds-hint-parent">
+                                <th data-label="Account Name" scope="row">
+                                    <c-account-item onaccountselected={handleOnClickEvent} item={theAccount}></c-account-item>
+                                </th>
+                            </tr>
+                         </template>
+                    </tbody>
+                </table>
+                <template if:true={hasRecordSelected}>
+                    <c-contact-list
+                        list-contacts-related={contactList}
+                        has-contacts={hasContacts}
+                        has-error={hasContactError}
+                        error-message={contactError}>
+                    </c-contact-list>
+                </template>
+            </template>
+        </template>
+    </template>
+</template>
