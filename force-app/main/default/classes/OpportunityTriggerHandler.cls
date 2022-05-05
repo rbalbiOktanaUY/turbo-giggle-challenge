@@ -101,7 +101,7 @@ public with sharing class OpportunityTriggerHandler {
                       Deleting and Opportunity 
     */
     private void runTriggerInsertOrDelete(){
-        retriveAccountIds();
-        updateAccountFields();
+       retriveAccountIds();
+       updateAccountFields();
     }
 }

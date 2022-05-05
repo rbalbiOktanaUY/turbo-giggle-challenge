@@ -1,8 +1,8 @@
 /**
- * @description       : 
+ * @description       : A class for Animal
  * @author            : Rodrigo Balbi - Oktana
  * @group             : 
- * @last modified on  : 04-27-2022
+ * @last modified on  : 05-05-2022
  * @last modified by  : Rodrigo Balbi - Oktana
 **/
 public with sharing class Animal {
@@ -14,28 +14,20 @@ public with sharing class Animal {
     }
 
     public void makeNoise() {
-        switch on this.animalType{
-            when Constants.ANIMAL_LION {
-                roar();
-            }
-            when Constants.ANIMAL_CAT {
-                meow();
-            }
-            when Constants.ANIMAL_HORSE {
-                neigh();
-            }
-            when Constants.ANIMAL_ALLIGATOR {
-                hiss();
-            }
-            when Constants.ANIMAL_BEAR {
-                growl();
-            }
-            when Constants.ANIMAL_COW {
-                moo();
-            }
-            when Constants.ANIMAL_DOG {
-                bark();
-            }
+        if(this.animalType.equals(Constants.ANIMAL_LION)){
+            roar();
+        } else if(this.animalType.equals(Constants.ANIMAL_CAT)){
+            meow();
+        } else if(this.animalType.equals(Constants.ANIMAL_HORSE)){
+            neigh();
+        } else if(this.animalType.equals(Constants.ANIMAL_ALLIGATOR)){
+            hiss();
+        } else if(this.animalType.equals(Constants.ANIMAL_BEAR)){
+            growl();
+        } else if(this.animalType.equals(Constants.ANIMAL_COW)){
+            moo();
+        } else if(this.animalType.equals(Constants.ANIMAL_DOG)){
+            bark();
         }
     }
 
